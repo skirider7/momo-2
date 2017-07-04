@@ -31,7 +31,7 @@ import net.dv8tion.jda.core.entities.Message;
 				+ "50\n"
 				+ "@target"
 		)
-public class Prune extends Command {
+public class PruneFrom extends Command {
 	private static final int MAX_PRUNE = 75;
 	private static final int DEFAULT_PRUNE = 40;
 
