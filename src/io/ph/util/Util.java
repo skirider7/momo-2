@@ -164,7 +164,7 @@ public class Util {
 	 * @return True if owner, false if not
 	 */
 	public static boolean isBotOwner(long id) {
-	    for (int i = 0; i < Bot.getInstance().getConfig().getBotOwnerId()) {
+	    for (int i = 0; i < Bot.getInstance().getConfig().getBotOwnerId().length;i++) {	
 	        if (Bot.getInstance().getConfig().getBotOwnerId()[i] == id) {
 	            return true;
 	        }
