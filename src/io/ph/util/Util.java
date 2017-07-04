@@ -149,13 +149,27 @@ public class Util {
 	 */
 	public static boolean memberHasPermission(Member member, Permission permission) {
 		if (permission.getJdaPerm() == null 
-				&& member.getUser().getIdLong() == Bot.getInstance().getConfig().getBotOwnerId()) {
+				&& isBotOwner(member.getUser().getIdLong())) {
 			return true;
 		}
 		if (permission.getJdaPerm() != null && member.hasPermission(permission.getJdaPerm())) {
 			return true;
 		}
 		return false;
+	}
+	
+	/**
+	 * Check if user id is a valid owner of the bot
+	 * @param id User ID
+	 * @return True if owner, false if not
+	 */
+	public static boolean isBotOwner(long id) {
+	    for (int i = 0; i < Bot.getInstance().getConfig().getBotOwnerId()) {
+	        if (Bot.getInstance().getConfig().getBotOwnerId()[i] == id) {
+	            return true;
+	        }
+	    }
+	    return false;
 	}
 
 	/**

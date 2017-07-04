@@ -110,7 +110,8 @@ public class Bot {
 			PropertiesConfiguration config = new PropertiesConfiguration("resources/Bot.properties");
 			botConfig.setToken(config.getString("BotToken"));
 			botConfig.setAvatar(config.getString("Avatar"));
-			botConfig.setBotOwnerId(config.getLong("BotOwnerId", 0));
+			// Following line modified by skirider7 to accomodate multiple bot owners
+			botConfig.setBotOwnerId(Arrays.stream(config.getStringArray("BotOwnerId")).mapToLong(Long::parseLong).toArray());
 			botConfig.setBotInviteLink(config.getString("InviteLink"));
 			botConfig.setMaxSongLength(config.getInt("MaxSongLength", 15));
 			botConfig.setCompanionBot(config.getBoolean("MusicCompanion", false));
@@ -179,7 +180,8 @@ public class Bot {
 	public class BotConfiguration {
 		private String token, avatar, botInviteLink;
 		private boolean companionBot;
-		private long botOwnerId;
+		//Following line modified by skirder7 to 
+		private long[] botOwnerId;
 		private int maxSongLength; // in minutes
 
 		public boolean isCompanionBot() {
@@ -206,11 +208,15 @@ public class Bot {
 			this.token = token;
 		}
 
-		public long getBotOwnerId() {
+		/*
+		 * Getter and Setter functions modified by skirider7 to accomodate multiple bot owners
+		 */
+		
+		public long[] getBotOwnerId() {
 			return botOwnerId;
 		}
 
-		public void setBotOwnerId(long botOwnerId) {
+		public void setBotOwnerId(long[] botOwnerId) {
 			this.botOwnerId = botOwnerId;
 		}
 
