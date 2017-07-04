@@ -109,12 +109,9 @@ public class Listeners extends ListenerAdapter {
 			AtomicInteger guildCount = new AtomicInteger();
 			Bot.getInstance().getBots().stream()
 			.forEach(j -> guildCount.addAndGet(j.getGuilds().size()));
-			e.getGuild().getPublicChannel().sendMessage("Hi, I'm Momo! You are my "
-					+ Util.ordinal(guildCount.get()) + " server.\n"
-					+ "If you want a list of commands, use `$help`. If you want some tutorials on my features, "
-					+ "do `$howto` - I suggest doing `$howto setup` immediately.\n"
-					+ "I also feature a web dashboard for my configuration! "
-					+ "Access it here: <https://momobot.io/dash>").queue(success -> {
+			e.getGuild().getPublicChannel().sendMessage("Hello, I am Lucky Beast.\n"
+					+ "It is nice to meet you. You are my "
+					+ Util.ordinal(guildCount.get()) + " server.").queue(success -> {
 						g.getConfig().setFirstTime(false);
 					}, failure -> {
 						g.getConfig().setFirstTime(false);
