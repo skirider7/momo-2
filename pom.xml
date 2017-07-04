@@ -2,10 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.ph</groupId>
-	<artifactId>momo</artifactId>
-	<version>2.1.0beta</version>
-	<name>Momo-2</name>
-	<description>Momo bot version 2</description>
+	<artifactId>lucky</artifactId>
+	<version>3.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -230,4 +228,6 @@
 		</dependency>
 	</dependencies>
 	<url>https://momobot.io</url>
+	<name>Lucky-3</name>
+	<description>Lucky Bot version 3.0, Based on Momo version 2.1.0beta</description>
 </project>
