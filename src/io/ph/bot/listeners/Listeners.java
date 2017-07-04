@@ -109,8 +109,8 @@ public class Listeners extends ListenerAdapter {
 			AtomicInteger guildCount = new AtomicInteger();
 			Bot.getInstance().getBots().stream()
 			.forEach(j -> guildCount.addAndGet(j.getGuilds().size()));
-			e.getGuild().getPublicChannel().sendMessage("Hello, I am Lucky Beast.\n"
-					+ "It is nice to meet you. You are my "
+			e.getGuild().getPublicChannel().sendMessage("Hello, I am Lucky Beast. "
+					+ "It is nice to meet you.\n You are my "
 					+ Util.ordinal(guildCount.get()) + " server.").queue(success -> {
 						g.getConfig().setFirstTime(false);
 					}, failure -> {
